@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+<style> 
+body {
+    background-color:rgb(189, 222, 235); 
+  font-family: Arial, Helvetica, sans-serif;
+
+  }
+  p {
+  font-size: 20px;
+  margin-left: 100px;
+   margin-right: 100px;
+   text-align:left;
+  width: 50em;
+}
+.nav {
+
+list-style-type: none;
+text-align: center;
+margin: 0;
+padding: 0;
+}
+
+.nav li {
+font: bold 15px sans-serif;
+font-size: 20px;
+padding: 10px 1px;
+margin: 2px 5px 10px 5px;
+
+border-radius: 50% 0% 50% 0%;
+color: black;
+cursor: pointer;
+background: radial-gradient(ellipse, #FFFFFF,#4257ce);
+width: 250pX;
+display:inline-block;
+
+}
+.nav li :hover{
+
+color: rgb(255, 0, 0) ;
+}
+  </style>
+</head>
+<body>  
+  <h1 style="background-color:rgb(255, 217, 0);text-align: center;padding: 50px;">Week3 & Week4</h1> 
+  
+  <ul class="nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="week1&2.html">Week1 & Week2</a></li>
+    <li><a href="week3&4.html">Week3 & Week4</a></li>
+    <li><a href="week5&6.html">Week5 & Week6</a></li>
+    <li><a href="week7&8.html">Week7 & Week8</a></li>
+    <li><a href="week9&10.html">Week9 & Week10</a></li>
+    <li><a href="week11&12.html">Week11 & Week12</a></li>
+
+    </div>  
+ <h1 style="text-align:center;">Perofessional achievements</h1>
+ <h2 style="text-align: center; font-style: italic; color: firebrick;">Week3</h2>
+ 
+    <p>In this week I downloaded and installed docker on my computer Desktop. After installing it successfully I checked
+    the version of ducker by << docker --version >> command and found out my docker version is 19.03.12.
+    I ran the hello-world Docker image to test if my installation is working correctly. I used the following command to run my first image,
+    << docker run hello-world >> and it ran successfully. I learned how I can remove the container by << docker rm --force bb >>  command. However, I 
+    I later understood that if I first stop container by << docker stop >> command, I no longer need to use a --force.</p>
+    <p> Also I learnt a few commands for Docker. For instance  << docker ps --all >>  shows all the containers on the machine and << docker image ls >> To check the downloaded image .
+     Also I learnt how to create the container and how to remove container.</p>
+     <br><br> 
+ </p>
+ <img src="img/img/installation.png" alt="installation" width="300" height="300">
+ <img src="img/img/container.JPG" alt="container" width="300" height="300">
+ <img src="img/img/command.JPG" alt="command" width="300" height="300">
+
+
+   <br><br>
+   <h1 style="text-align:center;">Conclusion</h1>
+  
+
+   <p>At this point, I've  installed Docker Desktop on my computer.
+   I ran a quick test to ensure I've set up docker. I learnt how to use docker and how to create the docker and image.</p>
+
+   <h2 style="text-align: center; font-style: italic; color: firebrick;">Week4</h2>
+
+   <p> During this week I had two stand up meetings. We shared what we did last week and what we should do this week with the team. Also I continued to work on Docker after setting up my development environment.
+    I started developing containerized applications. 
+    I downloaded the node-bulletin-board example project. This is a simple bulletin board application written in Node.js.
+    I used the Git to clone the example project from github. I also used the visual studio code to 
+    open the project and see the Docker files and also figure out how Docker files describe how to assemble a private filesystem for a container. For example 
+    workDir is for setting the working directory or Expose 8080 described which port the container is listening.</p>
+    
+    <p>During this week I built my first image, I used the the following command to craete the 
+    image << docker build --tag bulletinboard:1.0 . >> and it's successfully tagged.
+    After building my image I ran the command to start the container based on my new image which is 
+    bulletinboard:1.0. Also I visited my application at localhost:8000 and saw my bulletin board application up and running.
+    I tried to play around with the code of bulletin board application on visual studio to have a better understanding 
+    of how to modify the application in docker. At the beginning I had difficulties changing the application 
+    but after a while Grayson helped me to solve my problem by the following commands << docker container stop c141c33661c4 && docker container rm c141c33661c4 >>. Using this command I Stopped the container and then removed it.
+    Then I ran the following command to build my bulletin board image: << docker build --tag bulletinboard:1.0 .>> 
+     After that, I ran the following command to start a container based on my new image which is bulletinboard image << docker run --publish 8000:8080 --detach --name bb bulletinboard:1. >>
+     Finally I was able to change my application's Title, and did some more changes in my applicaton.
+    Then after making sure my app works successfully, I tried to delete the bulletin board container.  
+    <br><br>   
+ </p>
+ <img src="img/img/docker Image.png" alt="docker" width="300" height="200"> 
+ <img src="img/img/Bulletion Board.png" alt="Bulletion" width="300" height="200">
+ <img src="img/img/bb.png" alt="bb" width="300" height="200">
+ <p>
+  <br><br> 
+    In this week I tried to set up my <a href="https://hub.docker.com">dockerHub</a> account. First I had some research about Docker Hub
+    and how I can create it and how it works. I signed in to docker hub and then I created my Docker ID  
+    so I could sign in. I also tried to sign in from command line. After setting up my Docker hub I created the 
+    repository with bulletinboard name and I shared my image on Docker Hub, and finally by following command << docker push sabisingh/bulletinboard:1.0 >>I pushed my image in to docker hub.</p>
+
+    <br><br> 
+
+    <img src="img/img/ push.png" alt="push" width="300" height="200">
+    <img src="img/img/push Image.png" alt="push Image" width="300" height="200">
+    <img src="img/img/run bb.png" alt="push" width="300" height="200">
+    <br><br>
+    <img src="img/img/dockerID.png"alt="dockerID" width="300" height="200">
+    <img src="img/img/login.png" alt="login" width="300" height="200">
+    <img src="img/img/dockerHub.png" alt="dockerHub" width="300" height="200">
+<br><br> 
+    <p>At the end of this week I tried to finish my portfolio untill week four. I added some pictures for evidence for each week and I wrote some 
+     notes for each week about what I did and what I learnt. Also I had some more practice for docker to have a better understanding on it.
+
+    </p>
+
+    <h1 style="text-align:center;">Conclusion</h1>
+ 
+  <p>In week four I'm able to create the Image successfuly and perform a simple containerization of an application, also I am able to run the application 
+  and modify that application.
+  Also I learnt about dockerhub and pushing the image in to dockerhub so I can use it in any remote computer.</p>
+
+  <br><br>
+  </body>
+</html>
