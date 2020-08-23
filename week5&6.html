@@ -55,9 +55,62 @@ color: rgb(255, 0, 0) ;
     <li><a href="week11&12.html">Week11 & Week12</a></li>
 
     </div>  
-  <h1 style="text-align:left;">Perofessional achievements</h1>
+  <h1 style="text-align:center;">Perofessional achievements</h1>
+  <h2 style="text-align: center; font-style: italic; color: firebrick;">Week5</h2>
+  <p>    
+    In week five I had some resarch about Docker Compose and I underestand Compose is a tool to running multi-container Docker
+    application. 
+  </p>
+  <p>I used the <a href="https://docs.docker.com/compose/install/">Install Docker Compose Documentation</a> website to guide me to install the docker compose. However I underestood on Desktop system
+like Docker, for Mac and Windows, Docker compose is included as part of those desktop installs.</P>
+<P>I used the << docker-compose --version >> command to check the version of docker-compose.The version was 1.26.2, Then I started with Docker Compose.
+</P>
 
-    <p> </p>
-  
+ <p>In the first step I create the directory for the project which I named composetest, and then I created some files, In file app.py I putting "redis" as a host name of the "redias" container and used the 6379 default port for "Redis". 
+   After that I created the requirements.txt and Dockerfile in my project, Dockerfile builds a docker image. 
+   In next step I created another file named docker-compose.yml, this compose file defines two services which are "web" and "redis". 
+    </p>
+  <p>After that I created all required files. I tried to Run my app with compose, I ran the following command << docker-compose up >> to pull a Redis image, , builds an image for my code and starts the service which I defined. 
+  I entered the http://localhost:5000/ in my browser and my application
+  successfully run, also I tried to entered the http://127.0.0.1:5000 and I saw the following message "Hello World! I have been seen 1 times.", then after that I refreshed my page and the number increased.
+  I used another terminal to check my local images, it contained web and redis.
+  Also I tried to inspect images with the following command << docker inspect <id> >>. 
+  </p>
+    <br><br> 
+<img src="img/img/composeversion.png" alt="composeversion" width="300" height="200">
+<img src="img/img/LocalIPaddress.png" alt="LocalIPaddress" width="300" height="200">
+<img src="img/img/localhost.png" alt="localhost" width="300" height="200">
+<br><br>
+<img src="img/img/Files.png" alt="Files" width="300" height="200">
+<img src="img/img/inspect.png" alt="inspect" width="300" height="200">
+<img src="img/img/DockerUp.png" alt="DockerUp" width="300" height="200">
+
+<br>
+  <p>In next step I tried to edit the compose file to add bind mount for the web service. unfortunately after editting the file I got an error and I tried to solve my Issue by some reaserching and 
+    removing all the files and created new files, but the same issue appeared again and I decided to get help from grayson to solve my problem.</p>
+
+  <p>In my next class of this week I tried one more time to solve the issue but I couldn't solve it, therefore I asked Grayson to help me.
+    He checked my project and files and tried to fix it, he said you don't need to Edit the Composefile to add a bind mounthe for now and also after any changes I have to run << docker-composeup --table >> to see the changes on my application. I removed my images one more time 
+    and then ran it again and this time after writing any message in app.py I ran the docker-composeup --table and my message in my web pages changed successfully. 
+  </p>
+  <br>
+<img src="img/img/Error.png" alt="Error" width="300" height="200">
+<img src="img/img/Removed docker-images.png" alt="Removed docker-images" width="300" height="200">
+<img src="img/img/Run again.png" alt="Run again" width="300" height="200">
+  <br><br>
+<img src="img/img/Additional command.png" alt="Additional command" width="300" height="200">
+<img src="img/img/Final edit.png" alt="Final edit" width="300" height="200">
+
+  <br>
+<p>For my next project me and Sabi had a chat with Grayson and he asked us to choose a networking topic. I did some research about it to find a good topic for it. </p>
+<br>
+<h1 style="text-align:center;">Conclusion</h1>
+
+<p>In conclusion, I've worked with docker and docker-compose. At the start point of working with docker desktop and docker-compose
+  I had many problems with it, however now I have some knowledge about it. I learnt about container, images, docker-hub, docker-compose 
+  and also some commands related to docker. Examples of the commands I learnt are, how to create or remove the countainer and image and how I can push the image to docker hub Etc, 
+  This made me a little more confident to work with docker however I still have to do some more practice in my own time to be more confident using it.
+ </p>
+ <br><br> 
 </body>
 </html>
