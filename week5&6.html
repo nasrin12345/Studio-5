@@ -3,48 +3,60 @@
 <head>  
 <style> 
 body {
-    background-color:rgb(189, 222, 235); 
+    background-color:rgb(215, 218, 252); 
   font-family: Arial, Helvetica, sans-serif;
 
   }
   p {
   font-size: 20px;
-  margin-left: 100px;
+  margin-left: 400px;
    margin-right: 100px;
    text-align:left;
   width: 50em;
 }
 .nav {
+    
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    }
+    
+    .nav li {
+   font: bold 15px sans-serif;
+   font-size: 20px;
+   padding: 10px 1px;
+   margin: 2px 5px 10px 5px;
 
-list-style-type: none;
-text-align: center;
-margin: 0;
-padding: 0;
+    border-radius: 50% 0% 50% 0%;
+    color: black;
+    cursor: pointer;
+    background: radial-gradient(ellipse, #FFFFFF,#4257ce);
+    width: 350pX;
+    display:inline-block;
+    
+    }
+    .nav li :hover{
+    
+    color: rgb(255, 0, 0) ;
+    } 
+    .zoomA {
+  width: 300px;
+  height: 200;
+  /* ease | ease-in | ease-out | linear */
+  transition: transform ease-in-out 0.3s;
 }
-
-.nav li {
-font: bold 15px sans-serif;
-font-size: 20px;
-padding: 10px 1px;
-margin: 2px 5px 10px 5px;
-
-border-radius: 50% 0% 50% 0%;
-color: black;
-cursor: pointer;
-background: radial-gradient(ellipse, #FFFFFF,#4257ce);
-width: 250pX;
-display:inline-block;
-
-}
-.nav li :hover{
-
-color: rgb(255, 0, 0) ;
+.zoomA:hover {
+  transform: scale(1.5);
 }
   </style>
 
 </head>
 <body>  
-  <h1 style="background-color:rgb(255, 217, 0);text-align: center;padding: 50px;">Week5 & Week6</h1>
+  <h1 style="background-image: url(img/img/Header3)
+  ; text-align: center;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 50px ;
+  padding: 50px;">Week5 & Week6</h1>
   <ul class="nav">
     <li><a href="index.html">Home</a></li>
     <li><a href="week1&2.html">Week1 & Week2</a></li>
@@ -53,10 +65,11 @@ color: rgb(255, 0, 0) ;
     <li><a href="week7&8.html">Week7 & Week8</a></li>
     <li><a href="week9&10.html">Week9 & Week10</a></li>
     <li><a href="week11&12.html">Week11 & Week12</a></li>
-
+    <li><a href="week13&14.html">Week13 & Week14</a></li>
     </div>  
-  <h1 style="text-align:center;">Perofessional achievements</h1>
-  <h2 style="text-align: center; font-style: italic; color: firebrick;">Week5</h2>
+  <h1 style="text-align: center; font-style: italic; color: firebrick;">Week5</h1>
+  <h2 style="text-align:center;">Professional achievements</h2>
+  
   <p>    
     In week five I had some resarch about Docker Compose and I underestand Compose is a tool to running multi-container Docker
     application. 
@@ -71,21 +84,11 @@ like Docker, for Mac and Windows, Docker compose is included as part of those de
    In next step I created another file named docker-compose.yml, this compose file defines two services which are "web" and "redis". 
     </p>
   <p>After that I created all required files. I tried to Run my app with compose, I ran the following command << docker-compose up >> to pull a Redis image, , builds an image for my code and starts the service which I defined. 
-  I entered the http://localhost:5000/ in my browser and my application
+  I entered the http://localhost:5000/ in my browser To view the application running in the browser and my application
   successfully run, also I tried to entered the http://127.0.0.1:5000 and I saw the following message "Hello World! I have been seen 1 times.", then after that I refreshed my page and the number increased.
   I used another terminal to check my local images, it contained web and redis.
   Also I tried to inspect images with the following command << docker inspect <id> >>. 
   </p>
-    <br><br> 
-<img src="img/img/composeversion.png" alt="composeversion" width="300" height="200">
-<img src="img/img/LocalIPaddress.png" alt="LocalIPaddress" width="300" height="200">
-<img src="img/img/localhost.png" alt="localhost" width="300" height="200">
-<br><br>
-<img src="img/img/Files.png" alt="Files" width="300" height="200">
-<img src="img/img/inspect.png" alt="inspect" width="300" height="200">
-<img src="img/img/DockerUp.png" alt="DockerUp" width="300" height="200">
-
-<br>
   <p>In next step I tried to edit the compose file to add bind mount for the web service. unfortunately after editting the file I got an error and I tried to solve my Issue by some reaserching and 
     removing all the files and created new files, but the same issue appeared again and I decided to get help from grayson to solve my problem.</p>
 
@@ -93,50 +96,52 @@ like Docker, for Mac and Windows, Docker compose is included as part of those de
     He checked my project and files and tried to fix it, he said you don't need to Edit the Composefile to add a bind mounthe for now and also after any changes I have to run << docker-composeup --table >> to see the changes on my application. I removed my images one more time 
     and then ran it again and this time after writing any message in app.py I ran the docker-composeup --table and my message in my web pages changed successfully. 
   </p>
-  <br>
-<img src="img/img/Error.png" alt="Error" width="300" height="200">
-<img src="img/img/Removed docker-images.png" alt="Removed docker-images" width="300" height="200">
-<img src="img/img/Run again.png" alt="Run again" width="300" height="200">
-  <br><br>
-<img src="img/img/Additional command.png" alt="Additional command" width="300" height="200">
-<img src="img/img/Final edit.png" alt="Final edit" width="300" height="200">
-
-  <br>
 <p>For my next project me and Sabi had a chat with Grayson and he asked us to choose a networking topic. I did some research about it to find a good topic for it. </p>
-<br>
-<h1 style="text-align:center;">Conclusion</h1>
 
-<p>In conclusion, I've worked with docker and docker-compose. At the start point of working with docker desktop and docker-compose
-  I had many problems with it, however now I have some knowledge about it. I learnt about container, images, docker-hub, docker-compose 
-  and also some commands related to docker. Examples of the commands I learnt are, how to create or remove the countainer and image and how I can push the image to docker hub Etc, 
-  This made me a little more confident to work with docker however I still have to do some more practice in my own time to be more confident using it.
- </p>
- <br><br> 
+    <br><br> 
+<img src="img/img/composeversion.png" class="zoomA" alt="composeversion" width="300" height="200">
+<img src="img/img/LocalIPaddress.png" class="zoomA" alt="LocalIPaddress" width="300" height="200">
+<img src="img/img/localhost.png" class="zoomA" alt="localhost" width="300" height="200">
+<br><br>
+<img src="img/img/Files.png" class="zoomA" alt="Files" width="300" height="200">
+<img src="img/img/inspect.png" class="zoomA" alt="inspect" width="300" height="200">
+<img src="img/img/DockerUp.png" class="zoomA" alt="DockerUp" width="300" height="200">
+<br><br>
+<img src="img/img/Error.png" class="zoomA" alt="Error" width="300" height="200">
+<img src="img/img/Removed docker-images.png" class="zoomA" alt="Removed docker-images" width="300" height="200">
+<img src="img/img/Run again.png" class="zoomA" alt="Run again" width="300" height="200">
+  <br><br>
+<img src="img/img/Additional command.png" class="zoomA" alt="Additional command" width="300" height="200">
+<img src="img/img/Final edit.png" class="zoomA" alt="Final edit" width="300" height="200">
 
- <h2 style="text-align: center; font-style: italic; color: firebrick;">Week6</h2>
+  <br><br>
 
+
+
+ <h1 style="text-align: center; font-style: italic; color: firebrick;">Week6</h1>
+ <h2 style="text-align:center;">Professional achievements</h2>
  <p>This week I started with pushing my composetest container, compostest.web and redis application to dockerHub. First I tried to push both of them at the same time, 
  but it didn't worked, then I tried to push one by one. Therefore, I was able to push the both of them to dokerhub successfully. Also I had did more resarch about networking 
  to choose my networking project's topic. 
 </p>
-<br><br>
-<img src="img/img/Push.png" alt="Push" width="300" height="200">
-<img src="img/img/duckerhub-push.png" alt="duckerhub-push" width="300" height="200">
-<img src="img/img/Docker_hub.png" alt="Docker_hub" width="300" height="200">
-<br>
-<p> This week we had one standup meeting and we talked about what we did and what we plan to do for the next project within the group.
+<p>We had one standup meeting and we talked about what we did and what we plan to do for the next project within the group.
   For the next project, which is a Networking project, me and Sabi will work together to design a network. After doing a lot of research 
-to get an idea about designing network, we finally decided to setup a network for the office. We had a discussion about choosing a device and 
-how we can set up the network for an office in way that it is both cost efficient and secure. We drew the network for office on paper
-in order to have a basic plan for our project.</p>
+to get an idea about designing network, we finally decided to setup a network topology for a small business. We had a discussion about choosing a device and 
+how we can set up the network for an office in way that it is both cost efficient and secure, also we had a chat with Rob about our network topology 
+and we made some changes, in order to have a basic plan for our project.</p>
+<br><br>
+<img src="img/img/Push.png" class="zoomA" alt="Push" width="300" height="200">
+<img src="img/img/duckerhub-push.png" class="zoomA" alt="duckerhub-push" width="300" height="200">
+<img src="img/img/Docker_hub.png" class="zoomA" alt="Docker_hub" width="300" height="200">
 <br>
-<img src="img/img/Network.png" alt="Docker_hub" width="300" height="200">
-<br>
+
 <h1 style="text-align:center;">Conclusion</h1>
-In conclusion I was able to understand how to push multiple container to dockerhub successfuly. I learnt that I have to push them
-one by one rather than both at the same time. 
-We decided to set up a network which is very safe as well not being too costly. we started with drawing our basic plan in order to help us
-take further steps within the project.
+<p>In conclusion I've worked with docker and docker-compose. At the start point of working with docker desktop and docker-compose
+  I had many problems with it, however now I have some knowledge about it. I learnt about container, images, docker-hub, docker-compose 
+  and also some commands related to docker. I was able to understand how to push multiple container to dockerhub successfuly. </p>
+  <p> 
+We decided to set up a network topology for small business, which is very safe as well not being too costly. we started with drawing our basic plan in order to help us
+take further steps within the project.</p>
 
 </body>
 </html>
