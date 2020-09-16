@@ -41,28 +41,43 @@ body {
     color: rgb(255, 0, 0) ;
     } 
 
- 
-
     .zoomA {
   width: 300px;
   height: 200;
   /* ease | ease-in | ease-out | linear */
   transition: transform ease-in-out 0.3s;
+  display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+   
 }
+
+
 .zoomA:hover {
   transform: scale(1.5);
   text-align: center;
 }
+
 .h1 {
     background-image: url(img/img/header3.png); padding: 70px;
       text-align: center;
-      font-size: 80px ;
+      font-size: 70px ;
       padding: 50px;
   }  
-      </style>
-
-      
-     
+  #imagesMain{
+  
+    padding: 0;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 20px;
+    text-align:center;
+}
+#imagesMain img{
+    height: 200px;
+    width: 300px;
+    vertical-align: middle;
+}
+      </style>      
 </head>
 
 <body>
@@ -82,8 +97,6 @@ body {
     </div>  
   <h1 style="text-align: center; font-style: italic; color: firebrick;">Week1</h1>
   <h2 style="text-align:center;">Professional achievements</h2>
-
-
   <p>
 
     In week one, I was confused for choosing my project but after doing some research and getting information from the lectures, I decided 
@@ -99,14 +112,14 @@ body {
       work as a team to get efficient result.</p> 
   </p>
    <br><br>
-  
+   <div id="imagesMain">
    <img src="img/img/Cable1.png" class="zoomA" alt="cable" width="300" height="200">
    <img src="img/img/Cable2.png" class="zoomA" alt="cable" width="300" height="200">
    <br><br>
-  <img src="img/img/Cable5.png" class="zoomA" alt="cable" width="300" height="200">
+   <img src="img/img/Cable5.png" class="zoomA" alt="cable" width="300" height="200">
  
    <img src="img/img/cable.png" class="zoomA" alt="cable" width="300" height="200"></div>
-
+  </div>
    <br><br>
  
    <h1 style="text-align: center; font-style: italic; color: firebrick;">Week2</h1>  
@@ -126,10 +139,10 @@ body {
    <br>
      </p>
      <br><br>
-      
+     <div id="imagesMain"> 
   <img src="img/img/portfolio.png"  class="zoomA" alt="cable" width="300" height="200">
   <img src="img/img/research.png"  class="zoomA" alt="cable" width="300" height="200">
-
+</div>
     <h1 style="text-align:center;">Conclusion</h1>
   <p>In Conclusion, after doing more resarching I chose my project and I had to do some hardware work which was creating the RJ45 cable to connecting a computer to the internet</p>
   <p>Also I setup my portfolio and wrote first week's document and shared it with Grayson. Also I did some research about Ducker </p>

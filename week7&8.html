@@ -52,11 +52,24 @@ body {
 .h1 {
     background-image: url(img/img/header3.png); padding: 70px;
       text-align: center;
-      font-size: 80px ;
+      font-size: 70px ;
       padding: 50px;
   }  
 .zoomA:hover {
   transform: scale(1.5);
+}
+#imagesMain{
+  
+  padding: 0;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 20px;
+  text-align:center;
+}
+#imagesMain img{
+  height: 200px;
+  width: 300px;
+  vertical-align: middle;
 }
   </style>
 </head>
@@ -79,31 +92,60 @@ body {
     <h1 style="text-align: center; font-style: italic; color: firebrick;">Week7</h2>
    
   <h2 style="text-align:center;">Professional achievements</h2>
-  <p> We had two stand up meetings this week with grayson and our group. We explained what we had planned for our networking project within a group. 
-    Me and Sabi started our network project; Initially we decided to draw the basic topology and show it to Grayson to check if it was ok before continuing our work.
-    After Grayson confirming that it is okay, we put it inCisco packet tracer. Our topology contains two servers, one of them is the main server and the other is a backup server. Our servers 
+  <p> We had two stand up meetings this week with grayson and our group. We decided to set up a network topology for a small business, which is very safe as well not being too costly. We started with drawing our basic plan in order to help us
+    take further steps within the project. We explained what we had planned for our networking project within our group. 
+    Before starting our network project, we decided to draw the basic topology and show it to Grayson to check if it was ok before continuing our work.
+    After Grayson confirmed that it is okay, we put it in Cisco packet tracer. Our topology contains two servers, one of them is the main server and the other is a backup server. Our servers 
     were connected to the router via layer-2 switch. We also assigned Admin room cluster, Management room, Staff/common room and added an internet room with one PC for guest internet use.
     Inside each room we put two pcs that could be increased in response to future requirements. We also added a gateway and printer to the admin and management room. Each room connected to the 
     router via its own switch.</p>
-    <p>Next we had a discussion again about our project to make our network to decrease the cost as much as possible and make it more scable.
+    <p>Next we had a discussion again about our project and we decided to decrease the cost as much as possible and make it more scable.
     We added one more room named Sale Cluster to our topology and added two PCs inside the Sales' room. We removed one of the printers which
-    increased the cost and one printer remained which was shared between all. We also added one more Pc into Staff/common room.</p>
-    <p>I did some resarch about subnetting and vlan. My team mate Sabi made subnetting for our project in his own time, and We had a discussion about it during class.</p> 
+    increased the cost and one printer remained which was shared between all. We also added one more PC into Staff/common room.</p>
+    <p>I did some resarch about subnetting and vlan. My team mate Sabi made a subnetting for our project in his own time, and We had a discussion about it during class.</p> 
 
     <p>I decided to work on my portfolio. I changed my portfolio's body to make it easy to read, and also tried to change my layout as well to make it look better.
   </p>
   <h1 style="text-align: center; font-style: italic; color: firebrick;">Week8</h1>
   <h2 style="text-align:left;text-align: center;">Professional achievements</h2>
+  <p> 
+   We decided to modify our topology again to make it more scable and affordable. We added one more room 
+   named Distribution cluster which contained two PCs. This can be increased as required for future growth and development. 
+   Also we removed gateways from Admin and Management Cluster because, a gateway has some disadvantages such as containing only a certain number of computer systems which can
+   be connected to it. As well as this, gateway is weak in terms of troubleshooting when facing an issue.
+   Therefore, cutting out gateway can cut down on the cost and increase scability. We removed S1 switch which was connected to Admin, 
+   Sales and Staff/common room (BE JAYE OON ) We assigned four switches, which S1 connected to Distribution cluster, S2 connected to Admin cluster, S3 connected to Staff/common room and
+   S4 connected to Sales cluster and, all these switches connected to router via Management Switch. After having a discussion with Michael, we decided to create a separate Vlan for printer,
+    this way the printer is accessible with all of the switches.
 
-  
-
-  <br><br>
+  </p>
+  <p>
+    After modifying our topology, we did subnetting for all PC's. We assigned an ip address and gateway for all PC's.
+     We changed the Management cluster to HR to avoid confusing with management VLAN. Also we did basic configuration for all switches.
+     We set a password for VTY line (Virtual Terminal line)and console line to prevent unauthorized telnet access. We assigned the orr for VTY and console line password.
+   </p>
+   <p>
+     I did some research about networking from my previous paper and also did research on google in my own time to have a more
+     knowledge about networking and configuration in order to have a more secure and scable network topology.
+     <br><br>
     <a href="https://www.neweggbusiness.com/smartbuyer/over-easy/small-office-network-setup/">How-to Guide: Small Office Network Setup</a>
     <br>
     <a href="https://www.geeksforgeeks.org/computer-network-tutorials/">geeksforgeeks</a>
     <br><br>
- 
+   </p>
+   <br><br>
+    <div id="imagesMain">
+      <img src="img/img/Level-1.png" class="zoomA" alt="cable" width="300" height="200">
+      <img src="img/img/Level-2.png" class="zoomA" alt="cable" width="300" height="200">
+      <img src="img/img/Level-3.png" class="zoomA" alt="cable" width="300" height="200">
+    </div>
+ </div>
 
+ <h1 style="text-align:center;">Conclusion</h1>
+
+ <p>
+
+ </p>
 
 
 </body>
