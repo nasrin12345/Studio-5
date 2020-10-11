@@ -66,8 +66,8 @@ body {
   text-align:center;
 }
 #imagesMain img{
-  height: 200px;
-  width: 300px;
+  height: 270px;
+  width: 330px;
   vertical-align: middle;
 }
   </style>
@@ -91,11 +91,95 @@ body {
     <h1 style="text-align: center; font-style: italic; color: firebrick;">Week9</h1>
     <h2 style="text-align:left;text-align: center;">Professional achievements</h2>
     <p>
-     In this week we setup Vlan's and name each Vlan. Vlan 10 for Sale depatrment, Vlan 20 for Admin cluster, Vlan 30 for Staff/common room,
-     Vlan 40 for Distribution cluster, Vlan 50 for Printer and Vlan 99 for Management and we set ip address for all Vlans.
-    </p>
-  <p>
-    I had an issue to my portfolio's layout, and with the help of Sabi I could fix my problem.
+      This week we had a two stand up meetings with our group, similar to previous weeks. We continued the rest of the configuration on our network topology Devices.
+      We setup Vlan's for security and reducing broadcast traffic. We also named and set an IP address for each Vlan.
+      Vlan 10 for Sale department, Vlan 20 for Admin cluster, Vlan 30 for Staff/common room, Vlan 40 for Distribution cluster, Vlan 50 for Printer and Vlan 99 for Management.
+     </p>
+    
+     <p>There was an issue with my portfolio's layout, but with the help of Sabi I was able to fix the problem. </p>
+     <p>We configured a trunk link between a Cisco router and switches. We had Vlans in a multi switch LAN, therfore, for inter-connections between the switches we configured "Switchport mode trunk"
+     between switches to allowing the routing of traffic between different vlans.
+     For connecting PC's and printers to Switches we used the "switchport mode access". </p>
+     <p>An issue we faced in this part was that Computers inside VLANs had connectivity with each other, but were not able to reach computers on a different VLAN. For example, 
+     PC-4 from Vlan 30 (Staff/common cluster) could successfully ping PC-3 on the same vlan but it couldn't ping to pc-9 which is on Vlan 60 (HR Cluster). As well as this, the printer was not Accessible from all departments.</P>
+     
+     <p>We assigned Router-on-a-stick on the Router. In this case our Router's interface is divided to six sub-interfaces as there are six different Vlans
+       which act as a default gateway to their respective vlans. We used the following command "encapsulation dot1q vlan_id" to enable 802.1Q trunking and associate each VLAN with the sub-interfaces </p>
+     <div id="imagesMain">
+      <img src="img/img/VLAN.png" class="zoomA" alt="vlan">
+      <img src="img/img/pc4TOpc9.png" class="zoomA" alt="pc4TOpc9">
+      <img src="img/img/pc4TOpc3.png" class="zoomA" alt="pc4TOpc3.png">
+    </div>
+
   </p>
+  <h1 style="text-align: center; font-style: italic; color: firebrick;">Week10</h1>
+  <h2 style="text-align:left;text-align: center;">Professional achievements</h2>
+  <p>I tried trouble shooting the topology during the weekend. I fixed some mistakes on topology and assigned a gateway for printer to enable access from PCs.
+     During class time we did more trouble shooting and decided to remove the IP addresses from all switches as we configured Router-on-a-stick, and we did not need an IP address for switches.
+     This way we could use the IP address of router's sub-interfaces for all PC's gateway, after trouble shooting we could fix the issue, and all PC's from different VLAN can ping to eachother 
+    successfully. </p>
+    <P>For the main and backup server, we assigned vlan 70, named vlan Servers and assigned subnet prefix /29 for the servers. 
+      All departments can access each other but none of them can access the server because of security
+      and only management can access the servers. As well as this, we shut down the port G0/1 which is connected to servers via S1 to ensure none of the Pcs can access the servers.
+     
+    </P>
+    <p>For the last step of our networking project we decided to assign SSH access on router for securing remote connection.
+      Many IT professionals believe that it is not secure to use telnets for managin routers, switches and firewalls
+     (D.Davis.2005,para. 1). Therefore we decided to use standard an alternative to Telnet's which is Secure Shell(SSH). SSH is very benefitial compared to Telnets as it doesn't have may security
+     concerns. The reason for this is that it uses digital certificates and encryption.
+    </p>
+     <p>
+      We used the following command "crypto key generate rsa" to create the encryption keys for using the authentication and encryption of the SSH data.
+     This command uses Rivest Shamir Adlemann algorithm to generate the cryptographic keys .
+      Also, we set the size of the key modulus to 1024. If the size of the key is too high, it will be time consuming and if it is too low it will be very easy to crack therefore, 
+      1024 is a suitable key size.
+      For the login credentials on the router, we used “useradmin” for the username and “cisco” for the Password. Additionally, we used the following command "IP SSH authentication 3" so the user can
+      only put an incorrect password 3 times and after that they can not access the router via PC. Authentication timeout has been set to 60 seconds, after 60 second we cannot connect it. 
+      The following website was very helpful to do SSH access.
+     <br><br>
+      <a href="https://itexamanswers.net/chapter-6-enabling-ssh-cisco-routers-switches.html">Enabling SSH on Cisco routers and switches</a>
+      <br>
+      <a href=" https://www.techrepublic.com/article/configure-ssh-on-your-cisco-router/">Configure SSH on your Cisco router</a>  
+    
+    </p>
+     <p>For the final step we tested the connectivity of SSH from PC4 with "ssh -l adminuser 10.10.2.254" command. We tested all devices to make sure they work correctly and checked 
+       for connectivity between all PC's in different departments. Also we made sure devices in all departments have access to the printer. Also we tested Servers as well 
+       and the main server can connect to the backup server successfully and vice versa.
+       We also assigned cisco for the password, so we could access router from all PC's.The result of testing the sections showed that all of the devices work perfectly. </p>
+    <P>I put a screenshot of some of the PC's, thats shows connectivity between Pcs to eachother and to printer. The screenshots also show SSH access to router.</P>
+
+  <div id="imagesMain">
+    <img src="img/img/PC1.png" class="zoomA" alt="PC-1">
+    <img src="img/img/PC10.png" class="zoomA" alt="PC-10">
+    <img src="img/img/PC6.png" class="zoomA" alt="PC-6">
+    <br><br>
+    <img src="img/img/PC2toPrinter.png" class="zoomA" alt="PC2toPrinter">
+    <img src="img/img/PC7toPrinter.png" class="zoomA" alt="PC7toPrinter">
+    <img src="img/img/PC9 toPrinter.png" class="zoomA" alt="PC9toPrinter">
+    <br><br>
+    <img src="img/img/adminuser.PNG" class="zoomA" alt="adminuser">
+    <img src="img/img/Timeout.PNG" class="zoomA" alt="Timeout">
+    <img src="img/img/SSHaccess.png" class="zoomA" alt="SSHaccess">
+
+    <br><br>
+
+    <img src="img/img/Mainserver.PNG" class="zoomA" alt="Mainserver.PNG">
+    <img src="img/img/Backupserver.PNG" class="zoomA" alt="Backupserver.PNG">
+    <img src="img/img/Final.PNG" class="zoomA" alt="Final.PNG">
+    <br><br>
+    <img src="img/img/VLANname.png" class="zoomA" alt="VLANname">
+    <img src="img/img/Router'sIP.png" class="zoomA" alt="Router'sIP">
+    <img src="img/img/router-on-a-stick.png" class="zoomA" alt="router-on-a-stick.png">
+    
+    <br><br>
+  </div>
+  <h1 style="text-align:center;">Conclusion</h1>
+  <p>We did the rest of the configuration for devices such as Router onstick, ssh access and management. We also tested all the devices for connectivity between eachother.
+    We finished our second project and this project was very helpful for me because I understood how to do networking from the initial step of planning till the end. I also understood
+    the necessary aspects to pay attention to in networking in order to have a good design for an office. In this project we focused mostly on aspects such as security, scability and affordability.
+  </p>
+
+  <br><br>
+  </div>
 </body>
 </html>
