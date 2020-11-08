@@ -64,14 +64,14 @@ body {
   text-align:center;
 }
 #imagesMain img{
-  height: 200px;
-  width: 300px;
+  height: 270px;
+  width: 330px;
   vertical-align: middle;
 }
   </style>
 </head>
 
-<body>  
+<body> 
   <h1 class="h1">Week11 & Week12</h1> 
   <div>
   <ul class="nav">
@@ -83,10 +83,149 @@ body {
     <li><a href="week9&10.html">Week9 & Week10</a></li>
     <li><a href="week11&12.html">Week11 & Week12</a></li>
     <li><a href="week13&14.html">Week13 & Week14</a></li>
+    <li><a href="week15&16.html">Week15 & Week16</a></li>
     </ul>
-    </div>  
-  <h1 style="text-align:left;">Perofessional achievements</h1>
- 
+    </div> 
 
+  
+  <h1 style="text-align: center; font-style: italic; color: firebrick;">Week11</h1>
+  <h2 style="text-align:left;text-align: center;">Personal achievements</h2>
+
+         <p> We didn't do much in the first class of this week, since our second project was finished before the holidays and we didn't have our
+         new project yet. Therfore, I decided to work on my portfolio during class time and make some changes.
+        </p>
+        <p>In second class of this week, we had a standup meeting and Grayson gave us our third project. In this poroject we are going to work on kubernetes.
+        Kubernetes is an automating system for computer application deployment, management and scaling. Kubernotes can also easily manage
+        clusters of hosts running Linux. </p>
+        <p> Since I am not familiar with Kubernetes, Grayson introduced <a href="https://kubernetes.io/docs/tutorials/">Kubernetes Documentation</a> website,
+        which was very helpful. </p>
+        <p> This documentation contains a different section, each section has different steps explaining kubernetes. It also 
+        includes an interactive online tutorial.
+        I chose Kubernetes Basics tutorial which helped me understand Kubernetes system and some of its basic features.
+      
+       </p>
+
+       <p> After reading a documentation I tried to create a cluster in the online tutorial. I used the Minikube to Create a Cluster and Minikube tool to run Kubernetes locally, 
+         Minikube runs the kubernetes cluster inside my personal computer.
+        I installed Minikube and checked its version using the following command "Minikub version". The output was "minikube version: v1.8.1".
+        I started the kubernetes cluster by running the "minikub start" command.  I ran "Kubectlis version" to check if kubernetes was installed and ready to talk to our cluster. 
+        Kubectlis is a command line tool used to run commands against Kubernetes clusters. After running the command I was able to see both the client and the server versions.
+        To view the cluster details I ran "kubectl cluster-info". The output showed Kubernetes master and KubeDNS is running. </p>
+
+        <p>I tried to install Kubernetes locally in my computer, I decided to use Docker desktop to setup kubernetes instead of doing online tutorials. I Enabled Kubernetes
+          by clicking on the checkbox labelled on Docker setting menu. I clicked Apply & Restart, then kubernetes was set up by Docker Desktop.
+          I started to create a cluster but when I tried to run the "minikub start" command I got an error and wasn't able to fix the issue. Graysan 
+          advised to continue working on the online tutorial until he fixed the error. 
+        </p>
+        <p>I also ran the "kubectl get nodes" command to view the nodes in the cluster. I only had one node and its status was ready.</p>
+        
+       <p> By watching some youtube videos and also doing research from different websites, I got some more knowledge about Kubernetes. 
+        <br><br>
+        <a href="https://www.redhat.com/en/topics/containers/what-is-kubernetes">What is Kubernetes?</a>
+        <br>
+        <a href="https://auth0.com/blog/kubernetes-tutorial-step-by-step-introduction-to-basic-concepts/">Kubernetes Tutorial - Step by Step Introduction to Basic Concepts</a>
+          <br>
+          <a href="https://minikube.sigs.k8s.io/docs/start/">minikube</a>
+           <br>
+
+            <a href="https://www.youtube.com/watch?v=l_lWfipUimk&list=PLhW3qG5bs-L8EU_Oocu6RkNPpYpaamtXX">Kubernetes Beginner Tutorials</a>
+            <br>
+            <a href="https://www.youtube.com/watch?v=l_lWfipUimk">Kubernetes Beginner Tutorial 1 | Introduction and Getting Started</a>
+            <br>
+            <a href="https://www.youtube.com/watch?v=8C_SCDbUJTg">Kubernetes Architecture Simplified | K8s Explained in 10 Minutes</a>
+            <br><br>
+          </p>
+        
+          
+            <div id="imagesMain">
+
+          <img src="img/img/Tutorial.png" class="zoomA" alt="Tutorial">
+          <img src="img/img/CreateCluster.png" class="zoomA" alt="CreateCluster">
+
+                </div>
+
+              <br><br>
+          
+  <h1 style="text-align: center; font-style: italic; color: firebrick;">Week12</h1>
+  <h2 style="text-align:left;text-align: center;">Personal achievements</h2>
+
+ 
+ 
+  <p>I started to work on an online tuturial again to learn about Kubernotes from its initial steps.</p>
+   <p> I deployed another app on Kubernetes with the "kubectl create deployment"command.
+    I provided the deployment which was kubernetes-bootcamp name and app image and location. After dyploying the app I ran "kubectl get deployments" to list my deployment.
+    After that, I ran the following command "echo -e "\n\n\n\e[92mStarting Proxy kubectl proxy", it automatically opened the new terminal. After running this command I had a connection between 
+    our host which is the online terminal and the cluster. It is possible to directly access the API using proxy.
+    I then ran a new command which is "curl http://localhost:8001/version". This command allows to 
+    query the version directly through the API.</p>
+    
+
+   <p>Next I tried to execute the command directly on the containers. To do this, I listed the environment variables by the following command "kubectl exec $POD_NAME env". 
+     Next, I started a bash session in the Pod’s container, by "kubectl exec -ti $POD_NAME bash" command; This way I opened console on the container where we run the NodeJS application, and server.js file is the source code of the app.
+  I ran the "curl localhost:8080" to make sure my application is up.
+   </p>
+
+   <p>I ran "kubectl get pods" to verify that my applications are running. The output showed that one pod was running. Using "kubectl get services" command I listed the current Services from our cluster,
+   I had a Service called kubernetes which was created by default when minikube started the cluster. I tried to create a new service and expose it to external traffic.
+   My new service called kubernetes-bootcamp, received a unique cluster-IP which was 10.103.72.96. I ran "kubectl describe services/kubernetes-bootcamp" command to find out what port was opened externally. 
+   I created an environment variable named NODE_PORT that has the value of the Node port assigned. Using "curl $(minikube ip):$NODE_PORT" command
+   I tested if the app is exposed outside of the cluster. The response from the server showed that the service is exposed successfully. </p>
+   
+    <p>
+  The deployment created the label for the pod but I tried to apply a new label by "kubectl label pod $POD_NAME app=v1" command. This label allowed me to query our list of Pods and also to list the existing services.
+
+    In the next step, I learnt how to delete the service with the following command "kubectl delete service -l run=kubernetes-bootcamp". I used " kubectl get services"
+  command to confirm my kubernetes-bootcamp service is gone.</p>
+  
+    <p>I continued the online tutorial with Scaling a deployment. First I used the "kubectl get deployments" command to list my deployment. We had one pod and
+      the output showed there was 1 available. Available shows how many replicas of the application are available to our users. I tried to scale the my deployment to 4 replicas using "kubectl scale deployments/kubernetes-bootcamp --replicas=4" command.
+      I also ran "kubectl get deployments" to list my deployment again and this time it showed the available is 4 which means
+      4 replicas of the application are available. After that, I ran the "kubectl get pods -o wide" command  to check the number of pods and the output showed we have 4 Pods, with different IP addresses.
+    </p>
+    <p>Next I tried to scale down the service to two replicas so I ran "kubectl scale deployments/kubernetes-bootcamp --replicas=2" again.
+       Then, I ran "kubectl get deployments" to list the deployments and the output showed the number of replicas decreased to 2. After running "kubectl get pods -o wide" command the output showed that two pods were terminated. </p>
+       <p>In the last part, I tried to update the image of the application to version 2 using the following command "kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=jocatalin/kubernetes-bootcamp:v2".
+         Then I Created an environment variable named NODE_PORT. I used the"url $(minikube ip):$NODE_PORT" command to expose the IP and port. I saw that all my pods are running the latest version which was v2. I used "kubectl rollout status deployments/kubernetes-bootcamp"
+         command to confirm the update. </p>
+
+  <br><br>
+  <div id="imagesMain">
+   
+  <br><br>
+  <div id="imagesMain">
+
+    <img src="img/img/minikube-error.png" class="zoomA" alt="minikube-error">
+    <img src="img/img/create new service.png" class="zoomA" alt="reate new service">
+    <img src="img/img/response-server.png" class="zoomA" alt="rsponse-server">
+    <br><br>
+    <img src="img/img/root.png" class="zoomA" alt="root">
+    <img src="img/img/queryVersion.png" class="zoomA" alt="queryVersion">
+    <img src="img/img/Deploy-app.png" class="zoomA" alt="Deploy-app">
+    <br><br>
+    <img src="img/img/proxy.png" class="zoomA" alt="proxy">
+    <img src="img/img/commandOnContainer.png" class="zoomA" alt="commandOnContainer">
+    <img src="img/img/root2.png" class="zoomA" alt="root2">
+    <br><br>
+    <img src="img/img/Version2.png" class="zoomA" alt="Version2">
+    <img src="img/img/deleteservice.png" class="zoomA" alt="deleteservice">
+    <img src="img/img/4instance.png" class="zoomA" alt="4instance">
+    <br><br>
+    <img src="img/img/Available1.png" class="zoomA" alt="Available1">
+    <img src="img/img/Available4.png" class="zoomA" alt="Available4">
+    <img src="img/img/rouled out.png" class="zoomA" alt="rouled out">
+    <br><br>
+    <img src="img/img/newlable.png" class="zoomA" alt="newlable">
+    <img src="img/img/newlableV1.png" class="zoomA" alt="newlableV1">
+    <img src="img/img/done.png" class="zoomA" alt="done">
+
+ <br><br>
+  <h1 style="text-align:center;">Conclusion</h1>
+  <p>I compelete the online tutorial and I leant Kubernetes Basics, I learnt how to Create a Kubernetes cluster, how I can deploy app, Explore my app,
+    Expose my app publicly, Scale up my app, scale down my app and update my app. In adition, I learnt some command which is good for trubleshooting such as "Kubectl get" list resources, "kubectl describe" it shows detaild information
+    about a resources, "kubectl logs" print the logs from a container to pods and "kubectl exec" execute a command on a container in a pod. 
+  </p>
+<br><br>
+  </div>
 </body>
 </html>
+
